@@ -17,7 +17,8 @@ defmodule AmazonProductAdvertisingClient do
   """
   def call_api(request_params, config \\ %Config{}) do
     query = [request_params, config] |> combine_params |> percent_encode_query
-    get %URI{scheme: @scheme, host: @host, path: @path, query: query}
+    uri = %URI{scheme: @scheme, host: @host, path: @path, query: query}
+    get(uri)
   end
 
   defp combine_params(params_list) do
@@ -54,7 +55,7 @@ defmodule AmazonProductAdvertisingClient do
         Enum.join(["GET", url_parts.host, url_parts.path, url_parts.query], "\n")
       )
     signature = Base.encode64(hmac)
-    update_url url_parts, "Signature", signature
+    update_url(url_parts, "Signature", signature)
   end
 
   defp update_url(url_parts, key, value) do
@@ -62,6 +63,6 @@ defmodule AmazonProductAdvertisingClient do
                         |> URI.decode_query
                         |> Map.put_new(key, value)
                         |> percent_encode_query
-    Map.put url_parts, :query, updated_query
+    Map.put(url_parts, :query, updated_query)
   end
 end
