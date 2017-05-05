@@ -25,6 +25,6 @@ defmodule AmazonProductAdvertisingClient.ItemSearch do
   Execute an ItemSearch operation
   """
   def execute(search_params \\ %ItemSearch{}, config \\ %Config{}) do
-    AmazonProductAdvertisingClient.call_api search_params, config
+    AmazonProductAdvertisingClient.call_api(search_params, config)
   end
 end
