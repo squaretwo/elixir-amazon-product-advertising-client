@@ -6,6 +6,8 @@ defmodule AmazonProductAdvertisingClient do
   use HTTPoison.Base
   use Timex
 
+  require Logger
+
   alias AmazonProductAdvertisingClient.Config
 
   @scheme "http"
@@ -24,6 +26,7 @@ defmodule AmazonProductAdvertisingClient do
     |> percent_encode_query
     
     uri = %URI{scheme: @scheme, host: @host, path: @path, query: query}
+    Logger.info("Querying amazon api with associate tag : #{config |> Map.get(:"AssociateTag")}")
     get(uri)
   end
 
