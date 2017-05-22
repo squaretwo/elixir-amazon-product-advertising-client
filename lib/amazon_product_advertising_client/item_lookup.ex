@@ -6,7 +6,7 @@ defmodule AmazonProductAdvertisingClient.ItemLookup do
   alias __MODULE__
   alias AmazonProductAdvertisingClient.Config
 
-  defstruct "Condition": "New",
+  defstruct "Condition": nil,
     "IdType": "ASIN",
     "IncludeReviewsSummary": nil,
     "ItemId": nil,

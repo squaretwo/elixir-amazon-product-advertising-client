@@ -10,7 +10,7 @@ defmodule AmazonProductAdvertisingClient.ItemSearch do
   defstruct "Availability": "Available",
       "BrowseNode": nil,
       "BrowseNodeId": nil,
-      "Condition": "New",
+      "Condition": nil,
       "ItemPage": nil,
       "Keywords": nil,
       "MaximumPrice": nil,
