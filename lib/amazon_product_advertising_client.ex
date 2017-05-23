@@ -27,7 +27,6 @@ defmodule AmazonProductAdvertisingClient do
     
     uri = %URI{scheme: @scheme, host: @host, path: @path, query: query}
     Logger.info("Querying amazon api with associate tag : #{config |> Map.get(:"AssociateTag")}")
-    Logger.debug(uri)
     get(uri)
   end
 
