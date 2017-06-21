@@ -17,7 +17,8 @@ defmodule AmazonProductAdvertisingClient.ItemLookup do
     "ResponseGroup": "ItemAttributes,Images",
     "SearchIndex": nil,
     "TruncateReviewsAt": nil,
-    "VariationPage": nil
+    "VariationPage": nil,
+    "MaximumPrice": nil
 
   @doc """
   Execute an ItemLookup operation
