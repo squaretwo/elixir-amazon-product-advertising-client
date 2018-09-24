@@ -18,7 +18,7 @@ defmodule AmazonProductAdvertisingClient.Mixfile do
     [
       {:dogma, "~> 0.1", only: :dev},
       {:ex_doc, "~> 0.14", only: :dev},
-      {:httpoison, "~> 0.9.0"},
+      {:httpoison, "~> 1.0"},
       {:sweet_xml, "~> 0.6"},
       {:timex, "~> 3.1"},
     ]
